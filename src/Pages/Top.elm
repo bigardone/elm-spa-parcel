@@ -1,36 +1,36 @@
-module Pages.Top exposing (Flags, Model, Msg, page)
+module Pages.Top exposing (Model, Msg, Params, page)
 
-import Html.Styled as Html
-import Html.Styled.Attributes as Html
-import Page exposing (Document, Page)
-import Styles
+import Html.Styled exposing (..)
+import Spa.Document exposing (Document)
+import Spa.Page as Page exposing (Page)
+import Spa.Url exposing (Url)
 
 
-type alias Flags =
+type alias Params =
     ()
 
 
 type alias Model =
-    ()
+    Url Params
 
 
 type alias Msg =
     Never
 
 
-page : Page Flags Model Msg
+page : Page Params Model Msg
 page =
     Page.static
         { view = view
         }
 
 
-view : Document Msg
-view =
-    { title = "Top"
-    , body =
-        [ Html.section
-            [ Html.css [ Styles.mainSection ] ]
-            [ Html.text "Top" ]
-        ]
+
+-- VIEW
+
+
+view : Url Params -> Document Msg
+view { params } =
+    { title = "Homepage"
+    , body = [ text "Homepage" ]
     }

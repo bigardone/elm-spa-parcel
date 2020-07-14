@@ -1,4 +1,4 @@
-module Document exposing
+module Spa.Document exposing
     ( Document
     , map
     , toBrowserDocument
@@ -24,11 +24,5 @@ map fn doc =
 toBrowserDocument : Document msg -> Browser.Document msg
 toBrowserDocument doc =
     { title = doc.title
-    , body =
-        [ Html.main_
-            []
-            doc.body
-            |> Html.toUnstyled
-        ]
+    , body = List.map Html.toUnstyled doc.body
     }
-
