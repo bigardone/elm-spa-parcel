@@ -1,7 +1,7 @@
-module Generated.Route exposing
+module Spa.Generated.Route exposing
     ( Route(..)
     , fromUrl
-    , toHref
+    , toString
     )
 
 import Url exposing (Url)
@@ -26,8 +26,8 @@ routes =
         ]
 
 
-toHref : Route -> String
-toHref route =
+toString : Route -> String
+toString route =
     let
         segments : List String
         segments =
