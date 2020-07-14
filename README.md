@@ -3,7 +3,7 @@
 Base project template using:
 
 - **elm 0.19.1-3**
-- **elm-spa 4.1.0**
+- **elm-spa 5.0.2**
 - **elm-css 16.0.1**
 - **Parcel 1.12.4**
 
